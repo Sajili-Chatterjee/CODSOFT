@@ -1,5 +1,5 @@
 tasks=[] ### create an array
-
+### defining the functions to execute the operations
 def newTask():
     task = input ("Add new task: ")
     tasks.append(task)
@@ -25,7 +25,7 @@ def delTask():
     except:
         print(" Invalid input.")    
 
-
+###main method
 print("Welcome to the To-Do list app!!! Let's get organized...")
 
 while True:
