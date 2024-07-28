@@ -1,0 +1,52 @@
+tasks=[] ### create an array
+
+def newTask():
+    task = input ("Add new task: ")
+    tasks.append(task)
+    print(f"Task {task} is added to the menu!")
+
+def viewTask():
+    if not tasks:
+        print("There are no pending tasks.")
+    else:
+        print("Current Tasks:")
+        for i, task in enumerate(tasks): ###go through and access every task from the menu
+            print(f"Task {i}. {task}")
+
+def delTask():
+    viewTask() ### display available tasks to choose from
+    try:
+        taskToDelete= int(input("Choose the number of the task to be deleted: "))
+        if (taskToDelete >=0 and taskToDelete < len(tasks)):
+            tasks.pop(taskToDelete)
+            print(f"Task was removed.")
+        else:
+            print(f"Tak {taskToDelete} was not found.")
+    except:
+        print(" Invalid input.")    
+
+
+print("Welcome to the To-Do list app!!! Let's get organized...")
+
+while True:
+    print("\n") ### menu items
+    print("What do you want to perform today?...")
+    print("1. Add a task.")
+    print("2. Delete tasks.")
+    print("3. View tasks.")
+    print("4. Exit.")
+
+    preference=input("Enter your choice: ")
+
+
+    if (preference == "1"):
+        newTask()
+    elif (preference == "2"): 
+        delTask()
+    elif (preference == "3"):     
+        viewTask()
+    elif (preference == "4"):    
+        break
+    else:
+        print("Invalid input. Please try again later")     
+print("Thank you for using this application! You have successfully exited the app.")         
