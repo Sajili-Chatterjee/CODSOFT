@@ -1,0 +1,40 @@
+import random
+
+def results(choice_user , choice_computer):
+    if choice_user == choice_computer:
+        return "tie"
+    elif (choice_user == "rock" and choice_computer == "scissors") or (choice_user == "scissors" and choice_computer == "paper") or (choice_user == "paper" and choice_computer == "rock"):
+        print("You win!")
+        return "user"
+    else:
+        print("Computer wins!")
+        return "computer"
+
+def game():
+    user = 0
+    computer = 0
+    while 1:
+        choice_user=input("Enter your choice(rock, paper or scissors):").lower()
+        if choice_user not in ["rock","paper","scissors"]:
+            choice_user=input("Invalid choice entered. Try again!")
+        choice_computer=random.choice(["rock","paper","scissors"])
+        print(f"Computer's choice:{choice_computer}")
+        print(f"User's choice:{choice_user}")
+        winner=results(choice_user,choice_computer)
+        if winner=="user":
+            user+=1
+            return user
+        elif winner=="tie":
+            print("Round is tie!")
+        else:
+            computer+=1
+        print("Computer:")
+        print({computer})
+        print("User")
+        print({user})
+        play_again=input("Do you want to play again?(yes/no): ").lower()
+        if play_again == "no":
+            print("Thank you for playing!")
+            break
+
+game()
