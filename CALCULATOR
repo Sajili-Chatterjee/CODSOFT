@@ -1,0 +1,30 @@
+def Add(x,y):
+    return x+y
+
+def Sub(x,y):
+    return x-y
+
+def Mul(x,y):
+    return x*y
+
+def Div(x,y):
+    if(y==0):
+        print("Operation cannot be performed!!!")
+    return x/y
+
+x=float(input("Enter Operand 1: "))
+y=float(input("Enter Operand 2: "))
+op=input("Enter the command to execute(+,-,* or /): ")
+
+if op=='+':
+    result=Add(x,y)
+elif op=='-':
+    result=Sub(x,y)
+elif op=='*':
+    result=Mul(x,y)
+elif op=='/':
+    result=Div(x,y)
+else:
+    print("Invalid Command Input!!!")
+
+print(f"The result is :{result}")
